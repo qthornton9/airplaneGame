@@ -5,7 +5,7 @@ var player = {
 
 var enemy = [
     {top: 300, left: 200},
-    {top: 300, left: 250}
+    {top: 300, left: 300}
 ]
 
 function drawPlayer(){
@@ -45,3 +45,15 @@ document.onkeydown = function(e){
     }
     drawPlayer();
 }
+
+function drawEnemy(enemy){
+    output = "";
+    for(var i = 0;i < enemy.length;i++){
+        console.log(enemy[i]);
+        console.log(enemy[i].left);
+        output += "<div class='enemy' style = 'top:"+enemy[i].top+"px; left:"+enemy[i].left+"px;'></div>";
+        console.log(output);
+        document.getElementById("enemies").innerHTML = output;
+    }
+}
+drawEnemy(enemy);
